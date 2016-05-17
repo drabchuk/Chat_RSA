@@ -4,7 +4,6 @@ import ua.kpi.fpm.model.Model;
 import ua.kpi.fpm.model.entities.User;
 import ua.kpi.fpm.model.entities.messageService.deliveryService.SerializedMessage;
 import ua.kpi.fpm.model.entities.messageService.messageTypes.Message;
-import ua.kpi.fpm.model.entities.messageService.securityService.BinaryMessage;
 import ua.kpi.fpm.model.entities.messageService.messageTypes.MessageStr;
 import ua.kpi.fpm.view.View;
 
@@ -31,9 +30,12 @@ public class Controller {
         User bob = new User(2L);
 
         MessageStr msg1 = new MessageStr("Hi i'm Alice");
+        MessageStr msg2 = new MessageStr("How are You?");
         SerializedMessage encryptedMsg = alice.encryptMsg(msg1, bob.getPublicKey());
+        SerializedMessage encryptedMsg2 = alice.encryptMsg(msg2, bob.getPublicKey());
         try {
             bob.recieveEncryptedMessage(1L, encryptedMsg);
+            bob.recieveEncryptedMessage(1L, encryptedMsg2);
         } catch (IOException ioExc) {
             System.out.println("Bob can't recieve msg");
             ioExc.printStackTrace();
@@ -45,10 +47,7 @@ public class Controller {
             e.printStackTrace();
         }
         ArrayList<Message> bobMsgsFromAlice = bob.getAllMessagesFrom(1L);
-        System.out.println("To Bob from Alice:");
-        for (Message m: bobMsgsFromAlice) {
-            System.out.println(m.toString());
-        }
+        view.printMessageHistory(bobMsgsFromAlice, "Bob", "Alice");
     }
 
 }

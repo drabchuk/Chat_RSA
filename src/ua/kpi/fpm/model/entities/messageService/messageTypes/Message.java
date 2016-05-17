@@ -27,6 +27,6 @@ public class Message implements Sendable {
 
     @Override
     public String toString() {
-        return date.toString() + "\n" + content.getContent();
+        return date.toString() + "\n\n" + content.getContent();
     }
 }

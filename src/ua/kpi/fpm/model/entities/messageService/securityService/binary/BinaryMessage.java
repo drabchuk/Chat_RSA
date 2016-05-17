@@ -1,4 +1,4 @@
-package ua.kpi.fpm.model.entities.messageService.securityService;
+package ua.kpi.fpm.model.entities.messageService.securityService.binary;
 
 import ua.kpi.fpm.model.entities.messageService.deliveryService.SerializedMessage;
 import ua.kpi.fpm.model.entities.messageService.messageTypes.MessageStr;

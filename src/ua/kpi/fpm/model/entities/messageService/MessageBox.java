@@ -2,13 +2,11 @@ package ua.kpi.fpm.model.entities.messageService;
 
 import ua.kpi.fpm.model.entities.messageService.deliveryService.SerializedMessage;
 import ua.kpi.fpm.model.entities.messageService.messageTypes.Message;
-import ua.kpi.fpm.model.entities.messageService.securityService.BinaryMessage;
 import ua.kpi.fpm.model.entities.messageService.securityService.Key;
 import ua.kpi.fpm.model.entities.messageService.messageTypes.MessageStr;
 import ua.kpi.fpm.model.entities.messageService.securityService.SecurityService;
 import ua.kpi.fpm.model.entities.messageService.securityService.binary.rsaLib.RSASecurityService;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
